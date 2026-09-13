@@ -300,3 +300,58 @@ body { background: #ffffff; color: #17324a; }
   .organizer-grid { grid-template-columns: 1fr; }
   .organizer-photo { aspect-ratio: 4 / 3; }
 }
+
+
+/* Organizer portrait cards */
+.organizers-section { padding-top: 90px; background: #edf4fb; }
+.organizers-section .section-heading { margin-bottom: 58px; }
+.organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 20px; }
+.organizer {
+  position: relative;
+  min-height: 285px;
+  overflow: visible;
+  padding: 64px 22px 24px;
+  border: 1px solid #d4e0eb;
+  border-radius: 12px;
+  color: var(--ink);
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(12,32,51,.07);
+  text-align: center;
+  text-decoration: none;
+}
+.organizer-clickable { cursor: pointer; }
+.organizer-clickable:hover { border-color: #96cec9; }
+.organizer-clickable:focus-visible { outline: 3px solid rgba(0,169,157,.35); outline-offset: 4px; }
+.organizer-photo {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: #dceae9;
+  box-shadow: 0 6px 18px rgba(7,29,51,.18);
+  transform: translateX(-50%);
+}
+.organizer-photo img { width: 100%; height: 100%; object-fit: cover; }
+.organizer-info { display: flex; height: 100%; padding: 0; flex-direction: column; align-items: center; }
+.organizer h3 { min-height: auto; margin: 0 0 6px; font-family: var(--sans); font-size: 1.08rem; font-weight: 700; line-height: 1.25; }
+.organizer p { min-height: 0; }
+.organizer .organizer-affiliation { margin: 0 0 16px; color: #087d75; font-size: .82rem; font-weight: 700; line-height: 1.35; }
+.organizer .organizer-bio { margin: 0; color: #576b7c; font-size: .88rem; line-height: 1.55; text-align: left; }
+@media (min-width: 1180px) {
+  .organizer-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .organizer { padding-inline: 15px; }
+  .organizer .organizer-bio { font-size: .8rem; }
+}
+@media (max-width: 900px) {
+  .organizer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .organizer-grid { grid-template-columns: 1fr; gap-top: 54px; }
+  .organizer { min-height: 250px; }
+  .organizer-photo { aspect-ratio: auto; }
+}
