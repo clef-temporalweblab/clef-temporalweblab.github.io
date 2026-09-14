@@ -30,7 +30,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand { display: inline-flex; gap: 11px; align-items: center; color: white; text-decoration: none; line-height: 1.05; }
 .brand strong { display: block; font-size: 1rem; letter-spacing: -.01em; }
 .brand small { display: block; margin-top: 5px; color: #a9bfce; font-size: .69rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
-.brand-logo { width: 42px; height: 42px; flex: 0 0 42px; object-fit: contain; }
+.brand-logo { width: 52px; height: 52px; flex: 0 0 52px; object-fit: contain; }
 .brand-mark { width: 34px; height: 34px; position: relative; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(136,226,217,.45); border-radius: 50%; }
 .brand-mark span { position: absolute; width: 18px; height: 1px; background: var(--teal-light); transform-origin: center; }
 .brand-mark span:first-child { transform: rotate(0deg); }
