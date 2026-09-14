@@ -308,7 +308,7 @@ body { background: #ffffff; color: #17324a; }
 .organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 20px; }
 .organizer {
   position: relative;
-  min-height: 285px;
+  min-height: 190px;
   overflow: visible;
   padding: 64px 22px 24px;
   border: 1px solid #d4e0eb;
@@ -352,6 +352,6 @@ body { background: #ffffff; color: #17324a; }
 }
 @media (max-width: 600px) {
   .organizer-grid { grid-template-columns: 1fr; row-gap: 70px; }
-  .organizer { min-height: 250px; }
+  .organizer { min-height: 190px; }
   .organizer-photo { aspect-ratio: auto; }
 }
