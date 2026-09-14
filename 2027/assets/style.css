@@ -192,9 +192,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .task-overview-card h2 { margin: 12px 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1.15; }
 .task-overview-card p { color: var(--muted); }
 .task-overview-card .card-link { margin-top: auto; }
-.overview-layout { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 58px; align-items: start; padding-top: 72px; padding-bottom: 100px; }
+.overview-layout {
+  width: min(1500px, calc(100% - 40px));
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 58px;
+  align-items: start;
+  padding-top: 72px;
+  padding-bottom: 100px;
+}
 .overview-main { min-width: 0; }
-.overview-main .section { padding: 70px 0; }
+.overview-main .section {
+  padding: 70px 0;
+  background: transparent;
+  border: 0;
+}
+.overview-main .section + .section { border-top: 1px solid var(--line); }
 .overview-main .container, .overview-main .organizers-section .container { width: 100%; }
 .overview-main .organizers-section { padding-top: 70px; }
 .overview-main .organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
