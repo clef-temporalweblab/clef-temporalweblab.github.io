@@ -52,8 +52,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; color: var(--teal-light); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .eyebrow span:first-child { padding: 6px 10px; border: 1px solid rgba(136,226,217,.28); border-radius: 999px; }
 .eyebrow span + span::before { content: "·"; margin-right: 12px; color: #658096; }
-.hero h1 { max-width: 760px; margin: 0; font-family: var(--serif); font-size: clamp(2.65rem, 4.6vw, 4.65rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.02; }
-.hero h1 span { display: block; margin-bottom: 12px; color: var(--teal-light); font-family: var(--sans); font-size: .27em; font-weight: 700; letter-spacing: .13em; line-height: 1.2; text-transform: uppercase; }
+.hero-title { max-width: 790px; margin: 0; }
+.hero-title .lab-name { display: block; color: var(--navy); font-family: var(--sans); font-size: clamp(3.4rem, 6vw, 6rem); font-weight: 700; letter-spacing: -.055em; line-height: .95; }
+.hero-title .lab-subtitle { display: block; max-width: 720px; margin-top: 18px; color: #263f55; font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 500; letter-spacing: -.025em; line-height: 1.12; }
 .hero-copy > p { max-width: 650px; margin: 27px 0 0; color: #bfd0db; font-size: 1.12rem; line-height: 1.7; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; gap: 16px; padding: 13px 20px; border: 1px solid transparent; border-radius: 9px; font-size: .92rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s, border .2s; }
@@ -323,7 +324,7 @@ body { background: #ffffff; color: #17324a; }
 .eyebrow { color: #087d75; }
 .eyebrow span:first-child { border-color: #b8dfdc; background: rgba(255,255,255,.7); }
 .eyebrow span + span::before { color: #8ba1ae; }
-.hero h1 span { color: #087d75; }
+.hero-title .lab-name { color: #087d75; }
 .hero-copy > p { color: #526b7b; }
 .button-primary { color: white; background: #087d75; }
 .button-primary:hover { background: #056d66; }
