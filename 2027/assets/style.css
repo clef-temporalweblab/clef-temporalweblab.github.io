@@ -48,7 +48,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .orb { position: absolute; border-radius: 50%; filter: blur(4px); }
 .orb-one { width: 400px; height: 400px; right: -120px; top: 30px; background: radial-gradient(circle, rgba(0,169,157,.22), transparent 68%); }
 .orb-two { width: 350px; height: 350px; left: 30%; bottom: -220px; background: radial-gradient(circle, rgba(244,184,96,.12), transparent 68%); }
-.hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1.06fr .94fr; gap: 70px; align-items: center; padding: 90px 0 96px; }
+.hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 70px; align-items: center; padding: 90px 0 96px; }
 .eyebrow { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; color: var(--teal-light); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .eyebrow span:first-child { padding: 6px 10px; border: 1px solid rgba(136,226,217,.28); border-radius: 999px; }
 .eyebrow span + span::before { content: "·"; margin-right: 12px; color: #658096; }
