@@ -437,3 +437,29 @@ body { background: #ffffff; color: #17324a; }
   .organizer { min-height: 180px; }
   .organizer-photo { aspect-ratio: auto; }
 }
+
+/* Prominent conference tutorial resources */
+.overview-main .tutorials-section {
+  padding: 36px;
+  border: 1px solid #cce3df;
+  border-radius: 18px;
+  background: #eef8f6;
+}
+.tutorials-section .section-heading { max-width: 760px; }
+.tutorials-section h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
+.tutorial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 30px; }
+.tutorial-card { display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border: 1px solid #d4e4e3; border-top: 4px solid #087d75; border-radius: 12px; background: white; }
+.tutorial-conference { color: #087d75; font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
+.tutorial-card h3 { margin: 16px 0 0; font-family: var(--serif); font-size: 1.65rem; font-weight: 600; line-height: 1.2; }
+.tutorial-card p { color: var(--muted); margin: 18px 0 24px; }
+.tutorial-card .button { margin-top: auto; }
+.tutorial-card a:focus-visible { outline: 3px solid #17324a; outline-offset: 4px; }
+@media (min-width: 901px) { .site-nav { gap: 18px; } }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .nav-shell { flex-wrap: wrap; justify-content: center; gap: 14px; padding-block: 12px; }
+}
+@media (max-width: 700px) {
+  .tutorial-grid { grid-template-columns: 1fr; }
+  .overview-main .tutorials-section { padding: 26px 18px; }
+  .tutorial-card { padding: 24px; }
+}
