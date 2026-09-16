@@ -385,8 +385,8 @@ body { background: #ffffff; color: #17324a; }
 /* Organizer portrait cards */
 .organizers-section { padding-top: 90px; background: #edf4fb; }
 .organizers-section .container { width: min(1280px, calc(100% - 40px)); }
-.organizers-section .section-heading { margin-bottom: 58px; }
-.organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 20px; }
+.organizers-section .section-heading { margin-bottom: 90px; }
+.organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 70px 20px; }
 .organizer {
   position: relative;
   min-height: 180px;
@@ -424,7 +424,7 @@ body { background: #ffffff; color: #17324a; }
 .organizer .organizer-affiliation { margin: 0 0 16px; color: #087d75; font-size: .82rem; font-weight: 700; line-height: 1.35; }
 .organizer .organizer-bio { margin: 0; color: #576b7c; font-size: .88rem; line-height: 1.55; text-align: left; }
 @media (min-width: 1600px) {
-  .organizer-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .organizer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .organizer { padding-inline: 15px; }
   .organizer h3 { white-space: nowrap; }
   .organizer .organizer-bio { font-size: .8rem; }
