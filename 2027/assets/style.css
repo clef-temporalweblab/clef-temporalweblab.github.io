@@ -463,3 +463,18 @@ body { background: #ffffff; color: #17324a; }
   .overview-main .tutorials-section { padding: 26px 18px; }
   .tutorial-card { padding: 24px; }
 }
+
+/* Compact homepage announcement immediately below the hero. */
+.updates-strip { padding: 16px 0; background: #f5f9fa; border-bottom: 1px solid var(--line); }
+.updates-strip-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; }
+.updates-strip h2 { margin: 0; color: #087d75; font-family: var(--sans); font-size: .85rem; font-weight: 700; line-height: 1.5; }
+.updates-strip-announcement { display: flex; align-items: baseline; flex: 1 1 400px; gap: 6px 14px; margin: 0; font-size: .9rem; line-height: 1.5; }
+.updates-strip time { flex-shrink: 0; color: var(--muted); font-size: .8rem; }
+.updates-strip-link { padding-block: 4px; color: #087d75; font-size: .8rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.updates-strip-link:hover { text-decoration: underline; }
+.updates-strip-link:focus-visible { outline: 2px solid #087d75; outline-offset: 4px; }
+@media (max-width: 600px) {
+  .updates-strip-inner { gap: 6px 16px; }
+  .updates-strip-announcement { order: 1; flex-basis: 100%; flex-wrap: wrap; }
+  .updates-strip-link { margin-left: auto; }
+}
