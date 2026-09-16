@@ -1,20 +1,771 @@
 <!doctype html>
-<html lang="en"><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="TemporalWebLab Task 1: Question Recency Requirement Estimation."><meta name="theme-color" content="#081d33"><title>Task 1: Recency Estimation | TemporalWebLab 2027</title>
-  <link rel="icon" href="../assets/images/temporalweblab-icon.png" type="image/png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/style.css">
-</head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="top"><div class="nav-shell"><a class="brand" href="../"><img class="brand-logo" src="../assets/images/temporalweblab-icon.png" alt="" width="52" height="52"><span><strong>TemporalWebLab</strong><small>CLEF 2027</small></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button><nav class="site-nav" id="site-nav"><a href="../">Overview</a><a class="active" href="./">Tasks</a><a href="../resources.html">Resources</a><a href="../#tutorials">Tutorials</a><a href="../#timeline">Timeline</a><a href="../#organizers">Organizers</a><a href="../#faq">FAQ</a><a class="nav-cta" href="../participation.html">Participation</a></nav></div></header>
-<main id="main"><section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../">Overview</a><span>/</span><a href="./">Tasks</a><span>/</span><span>Task 1</span></div><span class="kicker">Task 1 · Ordinal classification</span><h1>Question Recency Requirement Estimation</h1><p>Predict how soon the currently correct answer to a question may need to be updated.</p></div></section>
-<section class="page-content"><div class="container content-layout"><article class="content-main">
-  <section class="content-section" id="overview"><h2>Overview</h2><p>Information changes at different rates. A live score may become outdated within minutes, while a historical fact may never require an update. This task asks systems to estimate the recency requirement of a question rather than answer it.</p><div class="notice"><strong>Campaign status:</strong> The task definition is established, while release links, final split sizes, and exact submission dates will be added when confirmed.</div></section>
-  <section class="content-section" id="input-output"><h2>Input and output</h2><div class="detail-grid"><div class="detail-card"><h3>Input</h3><p>A natural-language question, with accompanying context where provided in the released dataset.</p></div><div class="detail-card"><h3>Output</h3><p>Exactly one label from the twelve ordered recency classes.</p></div></div><h3>Illustrative example</h3><table class="data-table"><tbody><tr><th>Question</th><td>Who is the current president of the country?</td></tr><tr><th>Prediction</th><td>A few years</td></tr><tr><th>Interpretation</th><td>The answer is expected to remain valid on a multi-year rather than permanent timescale.</td></tr></tbody></table></section>
-  <section class="content-section" id="labels"><h2>Recency classes</h2><p>The labels form an ordered scale from the most frequently changing information to information that is not expected to change.</p><table class="data-table"><thead><tr><th>Order</th><th>Class</th><th>Order</th><th>Class</th></tr></thead><tbody><tr><td>1</td><td>An-Hour</td><td>7</td><td>A-Month</td></tr><tr><td>2</td><td>A-Few-Hours</td><td>8</td><td>A-Few-Months</td></tr><tr><td>3</td><td>A-Day</td><td>9</td><td>A-Year</td></tr><tr><td>4</td><td>A-Few-Days</td><td>10</td><td>A-Few-Years</td></tr><tr><td>5</td><td>A-Week</td><td>11</td><td>Many-Years</td></tr><tr><td>6</td><td>A-Few-Weeks</td><td>12</td><td>Never</td></tr></tbody></table></section>
-  <section class="content-section" id="data"><h2>Dataset and splits</h2><p>The campaign dataset is derived from RecencyQA and covers questions with diverse expected update frequencies.</p><table class="data-table"><thead><tr><th>Split</th><th>Labels</th><th>Purpose</th></tr></thead><tbody><tr><td>Training</td><td>Released</td><td>System development and model training.</td></tr><tr><td>Development</td><td>Released</td><td>Local validation and model selection.</td></tr><tr><td>Test</td><td>Hidden</td><td>Official TIRA evaluation.</td></tr></tbody></table><p>Exact split sizes and the final context fields will be confirmed in the first data release.</p></section>
-  <section class="content-section" id="evaluation"><h2>Evaluation</h2><table class="data-table"><thead><tr><th>Metric</th><th>Purpose</th></tr></thead><tbody><tr><td>Macro-F1</td><td>Primary metric; gives equal importance to every recency class.</td></tr><tr><td>Strict accuracy</td><td>Counts only exact class predictions.</td></tr><tr><td>Tolerant accuracy</td><td>Accepts predictions within one adjacent class.</td></tr><tr><td>Mean absolute ordinal distance</td><td>Measures how far predictions are from the gold class.</td></tr><tr><td>Under-estimation rate</td><td>Tracks predictions that recommend less frequent updating than required.</td></tr></tbody></table></section>
-  <section class="content-section" id="baselines"><h2>Baselines</h2><p>Planned starter systems include a majority-class baseline, supervised classification, ordinal classification, and zero- or few-shot language-model prompting.</p></section>
-  <section class="content-section" id="submission"><h2>Submission and participation</h2><p>Teams will submit one valid label for every test question through TIRA. The current plan permits up to three runs per task, with one primary run identified for official reporting.</p><ul><li>Teams may enter Task 1 without participating in Task 2.</li><li>Each run must use the released question identifiers and exact label spelling.</li><li>System descriptions should report training data, model, prompting or optimization method, and external resources.</li></ul></section>
-  <section class="content-section" id="dates"><h2>Important dates</h2><table class="data-table"><tbody><tr><th>Training and development data</th><td>October 2026 (planned)</td></tr><tr><th>Participant registration</th><td>January 2027 (planned)</td></tr><tr><th>Test phase</th><td>April 2027 (planned)</td></tr><tr><th>Results</th><td>May–June 2027 (planned)</td></tr></tbody></table><p>Exact deadlines will replace these month-level dates after CLEF confirmation.</p></section>
-  <section class="content-section" id="downloads"><h2>Downloads and links</h2><p>Question files, baselines, evaluation scripts, format validators, and the TIRA task link will be published on the Resources page.</p><div class="page-actions"><a class="button button-primary" href="../resources.html">View resources</a><a class="button button-secondary" href="../submission.html">Submission format</a></div></section>
-  <section class="content-section" id="faq"><h2>Task 1 FAQ</h2><h3>Must systems answer the question?</h3><p>No. The required output is the expected update interval, not the factual answer.</p><h3>Is a neighbouring class accepted?</h3><p>Macro-F1 and strict accuracy require the exact class. Tolerant accuracy additionally reports predictions within one adjacent class.</p><h3>Can external models or data be used?</h3><p>Permitted external resources will be defined in the final participation rules and must be documented.</p></section>
-</article><aside class="page-sidebar"><strong>On this page</strong><a href="#overview">Objective and motivation</a><a href="#input-output">Input, output and example</a><a href="#labels">Recency classes</a><a href="#data">Dataset and splits</a><a href="#evaluation">Evaluation</a><a href="#baselines">Baselines</a><a href="#submission">Submission</a><a href="#dates">Dates</a><a href="#downloads">Downloads</a><a href="#faq">FAQ</a></aside></div></section></main>
-<footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="../"><img class="brand-logo" src="../assets/images/temporalweblab-icon.png" alt="" width="52" height="52"><span><strong>TemporalWebLab</strong><small>CLEF 2027</small></span></a><p>Evaluating recency and change across the Web.</p></div><div><strong>Navigate</strong><a href="../">Overview</a><a href="./">Tasks</a><a href="../resources.html">Resources</a><a href="../submission.html">Submission</a></div><div><strong>Connect</strong><a href="https://www.clef-initiative.eu/" target="_blank" rel="noopener">CLEF Initiative</a><a href="https://github.com/clef-temporalweblab" target="_blank" rel="noopener">GitHub</a><a href="../#organizers">Organizers</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> TemporalWebLab organizers</span><a href="#top">Back to top ↑</a></div></footer><script src="../assets/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TemporalWebLab Task 1: Question Recency Requirement Estimation.">
+  <meta name="theme-color" content="#081d33">
+
+  <title>Task 1: Recency Estimation | TemporalWebLab 2027</title>
+
+  <link rel="icon" href="../assets/images/temporalweblab-icon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="nav-shell">
+
+    <a class="brand" href="../">
+      <img
+        class="brand-logo"
+        src="../assets/images/temporalweblab-icon.png"
+        alt=""
+        width="52"
+        height="52"
+      >
+      <span>
+        <strong>TemporalWebLab</strong>
+        <small>CLEF 2027</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="../">Overview</a>
+      <a class="active" href="./">Tasks</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../#timeline">Timeline</a>
+      <a href="../#organizers">Organizers</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="../participation.html">Participation</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+
+      <div class="breadcrumbs">
+        <a href="../">Overview</a>
+        <span>/</span>
+        <a href="./">Tasks</a>
+        <span>/</span>
+        <span>Task 1</span>
+      </div>
+
+      <span class="kicker">Task 1 · Ordinal classification</span>
+
+      <h1>Question Recency Requirement Estimation</h1>
+
+      <p>
+        Predict how soon the currently correct answer to a question is
+        expected to become outdated or incorrect.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="page-content">
+    <div class="container content-layout">
+
+      <article class="content-main">
+
+
+        <!-- Overview -->
+        <section class="content-section" id="overview">
+
+          <h2>Overview</h2>
+
+          <p>
+            Information changes at different rates. Some answers may become
+            outdated within hours, while others remain valid for years or are
+            not expected to change. Task 1 asks systems to estimate a
+            question's <strong>recency requirement</strong>: how soon its
+            currently correct answer is expected to become outdated or
+            incorrect, considering any accompanying context.
+          </p>
+
+          <p>
+            Systems assign one of twelve ordered recency classes, ranging from
+            highly dynamic information to information that is not expected to
+            change. Systems are not required to generate the factual answer
+            itself.
+          </p>
+
+          <h3>Why does recency estimation matter?</h3>
+
+          <p>
+            Search and question-answering systems increasingly operate over
+            information that changes over time. However, different questions
+            require very different levels of freshness. A question about
+            current weather may require recently retrieved evidence, while
+            another question may be answerable using information that remains
+            valid for years.
+          </p>
+
+          <p>
+            Estimating a question's recency requirement can help systems
+            determine how fresh their evidence should be, whether new
+            retrieval is necessary, and how aggressively previously retrieved
+            or cached information should be refreshed. Rather than treating
+            information as simply <em>current</em> or <em>outdated</em>, this
+            task models freshness requirements across multiple temporal scales.
+          </p>
+
+          <div class="notice">
+            <strong>Campaign status:</strong>
+            The task definition is established, while release links, final
+            split sizes, and exact submission dates will be added when
+            confirmed.
+          </div>
+
+        </section>
+
+
+        <!-- Task definition -->
+        <section class="content-section" id="definition">
+
+          <h2>Task definition</h2>
+
+          <p>
+            Given a natural-language question and, where provided, its temporal
+            context, the goal is to predict how soon a currently correct answer
+            is expected to change for the first time and therefore become
+            outdated or incorrect.
+          </p>
+
+          <p>
+            The prediction must be exactly one label from the twelve ordered
+            recency classes defined below.
+          </p>
+
+          <p>
+            The task concerns the
+            <strong>expected validity horizon of the answer</strong>. It does
+            not ask systems to estimate the age of a document containing the
+            answer, and it does not require systems to generate the answer
+            itself.
+          </p>
+
+        </section>
+
+
+        <!-- Input/output -->
+        <section class="content-section" id="input-output">
+
+          <h2>Input and output</h2>
+
+          <div class="detail-grid">
+
+            <div class="detail-card">
+              <h3>Input</h3>
+              <p>
+                A natural-language question, with accompanying temporal context
+                where provided in the released dataset.
+              </p>
+            </div>
+
+            <div class="detail-card">
+              <h3>Output</h3>
+              <p>
+                Exactly one label from the twelve ordered recency classes.
+              </p>
+            </div>
+
+          </div>
+
+          <p>
+            <strong>When context is provided,</strong> the prediction should
+            reflect the question under that specific context rather than its
+            typical recency requirement in isolation.
+          </p>
+
+          <h3>Illustrative examples</h3>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>Prediction</th>
+                <th>Interpretation</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>
+                  What is the current temperature in Innsbruck?
+                </td>
+                <td>A-Few-Hours</td>
+                <td>
+                  The currently correct answer may become outdated within a few
+                  hours.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  What is the current monthly unemployment rate?
+                </td>
+                <td>A-Month</td>
+                <td>
+                  The reported value is typically updated on approximately a
+                  monthly timescale.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Who currently holds a particular institutional office?
+                </td>
+                <td>A-Few-Years</td>
+                <td>
+                  The answer may remain valid for several years before the
+                  office holder changes.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  What is the chemical symbol for gold?
+                </td>
+                <td>Never</td>
+                <td>
+                  The answer is not expected to change.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <p>
+            These examples are illustrative. The correct class for a dataset
+            instance is determined by the question together with any context
+            supplied for that instance.
+          </p>
+
+        </section>
+
+
+        <!-- Labels -->
+        <section class="content-section" id="labels">
+
+          <h2>Recency classes</h2>
+
+          <p>
+            The twelve classes represent progressively longer expected
+            validity periods, from highly dynamic information to information
+            that is not expected to change.
+          </p>
+
+          <table class="data-table">
+
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Class</th>
+                <th>Interpretation</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1</td>
+                <td>An-Hour</td>
+                <td>Expected to change within an hour.</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>A-Few-Hours</td>
+                <td>Expected to change within a few hours.</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>A-Day</td>
+                <td>Expected to change within a day.</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>A-Few-Days</td>
+                <td>Expected to change within a few days.</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>A-Week</td>
+                <td>Expected to change within a week.</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>A-Few-Weeks</td>
+                <td>Expected to change within a few weeks.</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>A-Month</td>
+                <td>Expected to change within a month.</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>A-Few-Months</td>
+                <td>Expected to change within a few months.</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td>A-Year</td>
+                <td>Expected to change within a year.</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td>A-Few-Years</td>
+                <td>Expected to change within a few years.</td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+                <td>Many-Years</td>
+                <td>Expected to change only after many years.</td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+                <td>Never</td>
+                <td>Not expected to change.</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <p>
+            The scale uses finer distinctions for rapidly changing information
+            and progressively broader intervals at longer temporal horizons.
+          </p>
+
+        </section>
+
+
+        <!-- Dataset -->
+        <section class="content-section" id="data">
+
+          <h2>Dataset and splits</h2>
+
+          <p>
+            The campaign dataset is derived from
+            <strong>RecencyQA</strong> and contains questions spanning a broad
+            range of expected answer-validity horizons, from rapidly changing
+            information to stable facts.
+          </p>
+
+          <p>
+            Some questions may also be accompanied by temporal context that
+            specifies the situation in which the question is being asked.
+            Such context can affect the appropriate recency class.
+          </p>
+
+          <table class="data-table">
+
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Labels</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Training</td>
+                <td>Released</td>
+                <td>
+                  System development and model training.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Development</td>
+                <td>Released</td>
+                <td>
+                  Local validation and model selection.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Test</td>
+                <td>Hidden</td>
+                <td>
+                  Official TIRA evaluation.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <p>
+            Exact split sizes, file formats, and the final set of context fields
+            will be confirmed in the first data release.
+          </p>
+
+        </section>
+
+
+        <!-- Evaluation -->
+        <section class="content-section" id="evaluation">
+
+          <h2>Evaluation</h2>
+
+          <p>
+            Because the recency labels form an ordered scale, the evaluation
+            considers both exact classification performance and the ordinal
+            distance between predicted and gold classes.
+          </p>
+
+          <table class="data-table">
+
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Macro-F1</td>
+                <td>
+                  Primary metric; gives equal importance to every recency
+                  class.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Strict accuracy</td>
+                <td>
+                  Counts only exact class predictions as correct.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tolerant accuracy</td>
+                <td>
+                  Counts predictions within one adjacent class of the gold
+                  label as correct.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Mean absolute ordinal distance</td>
+                <td>
+                  Measures the average distance between the predicted and gold
+                  classes on the ordered recency scale.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Under-estimation rate</td>
+                <td>
+                  Measures how often a system predicts a longer validity period
+                  than the gold label, potentially underestimating the need for
+                  fresh information.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </section>
+
+
+        <!-- Baselines -->
+        <section class="content-section" id="baselines">
+
+          <h2>Baselines</h2>
+
+          <p>
+            Planned starter systems include a majority-class baseline,
+            supervised multiclass classification, ordinal classification, and
+            zero- and few-shot language-model prompting.
+          </p>
+
+          <p>
+            Baseline implementations and evaluation scripts will be released
+            with the campaign resources.
+          </p>
+
+        </section>
+
+
+        <!-- Submission -->
+        <section class="content-section" id="submission">
+
+          <h2>Submission and participation</h2>
+
+          <p>
+            Teams will submit one valid recency label for every test question
+            through TIRA. The current plan permits up to three runs per task,
+            with one primary run identified for official reporting.
+          </p>
+
+          <ul>
+            <li>
+              Teams may enter Task 1 without participating in Task 2.
+            </li>
+
+            <li>
+              Each run must use the released question identifiers and exact
+              label spelling.
+            </li>
+
+            <li>
+              Systems are required to predict a recency class; generating the
+              factual answer is not part of Task 1.
+            </li>
+
+            <li>
+              System descriptions should report training data, model,
+              prompting or optimization method, and external resources.
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!-- Downloads -->
+        <section class="content-section" id="downloads">
+
+          <h2>Downloads and links</h2>
+
+          <p>
+            Question files, baseline systems, evaluation scripts, format
+            validators, and the TIRA task link will be published on the
+            Resources page.
+          </p>
+
+          <div class="page-actions">
+            <a
+              class="button button-primary"
+              href="../resources.html"
+            >
+              View resources
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="../submission.html"
+            >
+              Submission format
+            </a>
+          </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="content-section" id="faq">
+
+          <h2>Task 1 FAQ</h2>
+
+          <h3>Must systems answer the question?</h3>
+
+          <p>
+            No. The required output is the recency class representing how soon
+            the currently correct answer is expected to become outdated or
+            incorrect.
+          </p>
+
+
+          <h3>How should systems use the provided context?</h3>
+
+          <p>
+            When context is provided, systems should estimate the recency
+            requirement of the question under that specific context. The same
+            question may have different recency requirements in different
+            temporal situations.
+          </p>
+
+
+          <h3>Is a neighbouring class accepted?</h3>
+
+          <p>
+            Macro-F1 and strict accuracy require the exact class. Tolerant
+            accuracy additionally reports whether the prediction falls within
+            one adjacent class of the gold label.
+          </p>
+
+
+          <h3>Why are the classes ordered?</h3>
+
+          <p>
+            The labels represent progressively longer expected answer-validity
+            periods. Predicting a neighbouring class therefore represents a
+            smaller temporal error than predicting a class several positions
+            away.
+          </p>
+
+
+          <h3>Can external models or data be used?</h3>
+
+          <p>
+            Permitted external resources will be defined in the final
+            participation rules and must be documented in system
+            descriptions.
+          </p>
+
+        </section>
+
+      </article>
+
+
+      <!-- Sidebar -->
+      <aside class="page-sidebar">
+
+        <strong>On this page</strong>
+
+        <a href="#overview">Overview and motivation</a>
+        <a href="#definition">Task definition</a>
+        <a href="#input-output">Input, output and examples</a>
+        <a href="#labels">Recency classes</a>
+        <a href="#data">Dataset and splits</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#baselines">Baselines</a>
+        <a href="#submission">Submission</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#faq">FAQ</a>
+
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <a class="brand footer-brand" href="../">
+
+        <img
+          class="brand-logo"
+          src="../assets/images/temporalweblab-icon.png"
+          alt=""
+          width="52"
+          height="52"
+        >
+
+        <span>
+          <strong>TemporalWebLab</strong>
+          <small>CLEF 2027</small>
+        </span>
+
+      </a>
+
+      <p>
+        Evaluating recency and change across the Web.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <strong>Navigate</strong>
+
+      <a href="../">Overview</a>
+      <a href="./">Tasks</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../submission.html">Submission</a>
+
+    </div>
+
+
+    <div>
+
+      <strong>Connect</strong>
+
+      <a
+        href="https://www.clef-initiative.eu/"
+        target="_blank"
+        rel="noopener"
+      >
+        CLEF Initiative
+      </a>
+
+      <a
+        href="https://github.com/clef-temporalweblab"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+
+      <a href="../#organizers">
+        Organizers
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <span>
+      © <span id="year">2026</span> TemporalWebLab organizers
+    </span>
+
+    <a href="#top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+<script src="../assets/main.js"></script>
+
+</body>
+</html>
