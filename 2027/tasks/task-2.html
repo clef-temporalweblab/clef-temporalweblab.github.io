@@ -164,7 +164,7 @@
 
 
         <span class="kicker">
-          Task 2 · Retrieval and grounded QA
+          Task 2 · Retrieval and evidence-grounded QA
         </span>
 
 
@@ -203,45 +203,21 @@
                OVERVIEW
           ================================================ -->
 
-          <section
-            class="content-section"
-            id="overview"
-          >
-
-            <h2>
-              Overview
-            </h2>
-
-
+         <section class="content-section" id="overview">
+            <h2>Overview</h2>
+          
             <p>
-              Web pages are updated, replaced, or removed, making it
-              difficult to recover earlier information from the current
-              Web. Web archives preserve captures of pages from different
-              times, allowing systems to examine past information and
-              compare versions.
+              Web pages change over time: information may be updated, replaced, or removed.
+              Web archives preserve earlier versions of pages and make it possible to study
+              what information was available at different points in time.
             </p>
-
-
+          
             <p>
-              Task 2 asks participants to retrieve relevant evidence from
-              a fixed archive collection and answer questions about
-              information at specific times or changes across archived
-              versions. Each answer must include the identifiers of
-              supporting archive records.
+              Task 2 focuses on answering questions about past information and changes
+              across archived Web pages. Participants will retrieve relevant evidence
+              from the provided archive corpus and generate answers grounded in the
+              retrieved records.
             </p>
-
-
-            <div class="notice">
-
-              <strong>
-                Provisional specification:
-              </strong>
-
-              Corpus size, redistribution mechanism, final schemas, and
-              scoring details remain subject to organizer validation.
-
-            </div>
-
           </section>
 
 
@@ -249,59 +225,31 @@
                INPUT / OUTPUT
           ================================================ -->
 
-          <section
-            class="content-section"
-            id="input-output"
-          >
+          <section class="content-section" id="input-output">
 
-            <h2>
-              Input, output and example
-            </h2>
+            <section class="content-section" id="input-output">
 
-
-            <div class="detail-grid">
-
-
-              <div class="detail-card">
-
-                <h3>
-                  Input
-                </h3>
-
-                <p>
-                  A temporal question and access to the frozen End of
-                  Term–based corpus released for the campaign.
-                </p>
-
+              <h2>Input and output</h2>
+            
+              <div class="detail-grid">
+            
+                <div class="detail-card">
+                  <h3>Input</h3>
+                  <p>
+                    A temporal question and access to the provided Web archive corpus.
+                  </p>
+                </div>
+            
+                <div class="detail-card">
+                  <h3>Output</h3>
+                  <p>
+                    An answer together with the archive records supporting that answer.
+                  </p>
+                </div>
+            
               </div>
-
-
-              <div class="detail-card">
-
-                <h3>
-                  Output
-                </h3>
-
-                <p>
-                  An answer and the stable record identifiers of
-                  supporting archive evidence.
-                </p>
-
-              </div>
-
-
-            </div>
-
-
-            <h3>
-              Illustrative example
-            </h3>
-
-
-            <p>
-              This synthetic example illustrates the task; the program,
-              values, and record IDs below are fictional.
-            </p>
+            
+            </section>
 
 
             <table class="data-table">
@@ -381,92 +329,51 @@
                QUESTION TYPES
           ================================================ -->
 
-          <section
-            class="content-section"
-            id="question-types"
-          >
+          <section class="content-section" id="question-types">
 
-            <h2>
-              Question types
-            </h2>
-
-
+            <h2>Question types</h2>
+          
             <div class="detail-grid">
-
-
+          
               <div class="detail-card">
-
-                <h3>
-                  Point in time
-                </h3>
-
+                <h3>Point in time</h3>
                 <p>
-                  Identify information recorded in archive captures
-                  relevant to a specified date or period.
+                  Answer a question using information available at a specified time
+                  or during a specified period.
                 </p>
-
               </div>
-
-
+          
               <div class="detail-card">
-
-                <h3>
-                  First or last observed
-                </h3>
-
+                <h3>First or last observed</h3>
                 <p>
-                  Identify the earliest or latest observation of a fact
-                  within the released archive collection. The first
-                  recorded observation does not necessarily indicate when
-                  the fact became true.
+                  Identify the earliest or latest archived observation of a fact
+                  within the provided corpus.
                 </p>
-
               </div>
-
-
+          
               <div class="detail-card">
-
-                <h3>
-                  Compare versions
-                </h3>
-
+                <h3>Compare versions</h3>
                 <p>
-                  Compare values or statements across two archived states.
+                  Compare information across two archived versions of a page.
                 </p>
-
               </div>
-
-
+          
               <div class="detail-card">
-
-                <h3>
-                  Verify change
-                </h3>
-
+                <h3>Verify change</h3>
                 <p>
-                  Determine whether the specified change is supported by
-                  the archived versions.
+                  Determine whether a stated change is supported by archived evidence.
                 </p>
-
               </div>
-
-
+          
               <div class="detail-card">
-
-                <h3>
-                  Trace changes
-                </h3>
-
+                <h3>Trace changes</h3>
                 <p>
-                  Reconstruct a sequence of observed changes across
-                  archived versions.
+                  Reconstruct how information changed across multiple archived versions.
                 </p>
-
               </div>
-
-
+          
             </div>
-
+          
           </section>
 
 
@@ -474,133 +381,32 @@
                CORPUS
           ================================================ -->
 
-          <section
-            class="content-section"
-            id="corpus"
-          >
+          <section class="content-section" id="corpus">
 
-            <h2>
-              Corpus and dataset splits
-            </h2>
-
-
+            <h2>Web archive corpus</h2>
+          
             <p>
-              The pilot corpus is planned around selected End of Term
-              collections from 2012, 2016, 2020, and 2024. Each processed
-              record will retain stable identifiers and temporal metadata
-              so systems can cite evidence reproducibly.
+              The task will use a curated corpus derived from the End of Term Web Archive
+              collections. The corpus will contain archived Web pages from multiple time
+              periods together with the temporal and provenance information needed to
+              identify individual captures.
             </p>
-
-
-            <h3>
-              Planned record contents
-            </h3>
-
-
+          
+            <h3>Record information</h3>
+          
             <ul>
-
-              <li>
-                Stable record identifier and source URL.
-              </li>
-
-              <li>
-                Capture timestamp and collection provenance.
-              </li>
-
-              <li>
-                Extracted text suitable for retrieval.
-              </li>
-
-              <li>
-                Available document-level metadata.
-              </li>
-
+              <li>Archive record identifier</li>
+              <li>Source URL</li>
+              <li>Capture timestamp</li>
+              <li>Collection provenance</li>
+              <li>Extracted page text</li>
             </ul>
-
-
-            <table class="data-table">
-
-              <thead>
-
-                <tr>
-
-                  <th>
-                    Component
-                  </th>
-
-                  <th>
-                    Planned scale
-                  </th>
-
-                </tr>
-
-              </thead>
-
-
-              <tbody>
-
-                <tr>
-
-                  <td>
-                    Frozen corpus
-                  </td>
-
-                  <td>
-                    Approximately 1–3 million WET-derived records
-                    (about 15–40 GB).
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Training questions
-                  </td>
-
-                  <td>
-                    Approximately 2,000 with answers and evidence.
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Development questions
-                  </td>
-
-                  <td>
-                    Approximately 200 with answers and evidence.
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Test questions
-                  </td>
-
-                  <td>
-                    Approximately 200 with hidden answers and evidence.
-                  </td>
-
-                </tr>
-
-              </tbody>
-
-            </table>
-
-
+          
             <p>
-              Participants may build lexical, dense, or hybrid indexes.
-              A BM25 index and starter retrieval results are planned.
+              Participants will be able to build their own lexical, dense, or hybrid
+              retrieval systems over the released corpus.
             </p>
-
+          
           </section>
 
 
@@ -608,100 +414,20 @@
                EVALUATION
           ================================================ -->
 
-          <section
-            class="content-section"
-            id="evaluation"
-          >
+          <section class="content-section" id="evaluation">
 
-            <h2>
-              Evaluation
-            </h2>
-
-
-            <table class="data-table">
-
-              <thead>
-
-                <tr>
-
-                  <th>
-                    Component
-                  </th>
-
-                  <th>
-                    Planned measures
-                  </th>
-
-                </tr>
-
-              </thead>
-
-
-              <tbody>
-
-                <tr>
-
-                  <td>
-                    Answer quality
-                  </td>
-
-                  <td>
-                    Normalized exact match and token-level F1.
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Typed answers
-                  </td>
-
-                  <td>
-                    Type-specific comparison for dates, intervals,
-                    numbers, and sets.
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Multiple changes
-                  </td>
-
-                  <td>
-                    Set-based precision, recall, and F1.
-                  </td>
-
-                </tr>
-
-
-                <tr>
-
-                  <td>
-                    Evidence grounding
-                  </td>
-
-                  <td>
-                    Record-level evidence precision, recall, and F1.
-                  </td>
-
-                </tr>
-
-              </tbody>
-
-            </table>
-
-
+            <h2>Evaluation</h2>
+          
             <p>
-              The official ranking formula and treatment of
-              answer/evidence components will be finalized before the
-              evaluation period.
+              Systems will be evaluated on both answer correctness and the quality
+              of the supporting archive evidence.
             </p>
-
+          
+            <p>
+              The exact evaluation measures will depend on the question type and
+              will be described in the final task specification.
+            </p>
+          
           </section>
 
 
