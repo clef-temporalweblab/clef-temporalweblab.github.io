@@ -489,3 +489,17 @@ body { background: #ffffff; color: #17324a; }
   .updates-strip-inner { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 16px 18px; }
   .updates-strip-link { grid-column: 1; grid-row: 3; justify-self: start; padding-block: 4px; }
 }
+
+/* Organizer names and affiliations below the hero title. */
+.hero-organizers { max-width: 900px; margin-top: 28px; font-family: var(--sans); }
+.hero-organizer-names { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 1rem; font-weight: 600; line-height: 1.6; }
+.hero-organizer-names li { white-space: nowrap; }
+.hero-organizer-names a { text-decoration: none; }
+.hero-organizer-names a:hover { color: #087d75; text-decoration: underline; }
+.hero-organizer-names a:focus-visible { outline: 2px solid #087d75; outline-offset: 4px; }
+.hero-organizers sup { margin-left: 2px; color: #087d75; font-size: .7em; }
+.hero-affiliations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 24px; margin: 14px 0 0; padding: 0; list-style: none; color: #526b7b; font-size: .82rem; line-height: 1.6; }
+@media (max-width: 600px) {
+  .hero-organizer-names { gap: 6px 16px; font-size: .92rem; }
+  .hero-affiliations { grid-template-columns: 1fr; gap: 4px; }
+}
