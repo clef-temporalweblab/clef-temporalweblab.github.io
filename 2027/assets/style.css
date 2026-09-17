@@ -503,3 +503,15 @@ body { background: #ffffff; color: #17324a; }
   .hero-organizer-names { gap: 6px 16px; font-size: .92rem; }
   .hero-affiliations { gap: 5px 14px; }
 }
+
+/* Distinguish the two evaluation tasks on the overview page. */
+.tasks-section .task-card { display: flex; flex-direction: column; border-top-width: 5px; }
+.tasks-section .task-one { border-top-color: #087d75; background: #edf7f4; }
+.tasks-section .task-two { border-top-color: #233f64; background: #eff3f9; }
+.tasks-section .task-card::after { display: none; }
+.tasks-section .task-number { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; letter-spacing: .06em; line-height: 1.4; }
+.tasks-section .task-one .task-number, .tasks-section .task-one .task-tag { color: #076b64; }
+.tasks-section .task-two .task-number, .tasks-section .task-two .task-tag { color: #233f64; }
+.tasks-section .task-tag { margin: 12px 0 16px; }
+.tasks-section .task-card > .card-link { margin-top: auto; padding-top: 26px; }
+.tasks-section .task-two > .card-link { color: #233f64; }
