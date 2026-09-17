@@ -1,26 +1,154 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="TemporalWebLab 2027 task overview."><meta name="theme-color" content="#081d33">
-  <title>Tasks | TemporalWebLab 2027</title>
-  <link rel="icon" href="../assets/images/temporalweblab-icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/style.css">
-</head>
-<body><a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="top"><div class="nav-shell">
-    <a class="brand" href="../" aria-label="TemporalWebLab home"><img class="brand-logo" src="../assets/images/temporalweblab-icon.png" alt="" width="52" height="52"><span><strong>TemporalWebLab</strong><small>CLEF 2027</small></span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="../">Overview</a><a class="active" href="./">Tasks</a><a href="../resources.html">Resources</a><a href="../tutorials.html">Tutorials</a><a href="../#timeline">Timeline</a><a href="../#organizers">Organizers</a><a href="../#faq">FAQ</a><a class="nav-cta" href="../participation.html">Participation</a></nav>
-  </div></header>
-  <main id="main">
-    <section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../">Overview</a><span>/</span><span>Tasks</span></div><span class="kicker">Two complementary challenges</span><h1>TemporalWebLab tasks</h1><p>TemporalWebLab offers two complementary tasks: estimating how soon an answer may need updating, and answering questions about past information and changes using Web archives. Teams may participate in either task independently or in both.</p></div></section>
-    <section class="page-content"><div class="container task-overview-grid">
-      <article class="task-overview-card"><span class="task-number">01</span><span class="task-tag">Classification · Ordinal prediction</span><h2>Question Recency Requirement Estimation</h2><p>Estimate how soon the currently correct answer to a question may need to be updated, using one of twelve ordered recency classes.</p><dl class="task-specs"><div><dt>Input</dt><dd>A question, with accompanying context where provided</dd></div><div><dt>Output</dt><dd>One of 12 ordered recency classes</dd></div><div><dt>Primary metric</dt><dd>Macro-F1</dd></div></dl><a class="card-link" href="task-1.html">View Task 1 details <span aria-hidden="true">→</span></a></article>
-      <article class="task-overview-card"><span class="task-number">02</span><span class="task-tag">Retrieval · Evidence-grounded QA</span><h2>Question Answering over Web Archives</h2><p>Answer questions about information at specific times and changes across archived versions of Web pages. Retrieve supporting evidence from the provided archive collection and return an answer with supporting record IDs.</p><dl class="task-specs"><div><dt>Input</dt><dd>A question and access to the provided archive collection</dd></div><div><dt>Output</dt><dd>Answer and supporting record IDs</dd></div><div><dt>Evaluation</dt><dd>Answer correctness and supporting evidence</dd></div></dl><a class="card-link" href="task-2.html">View Task 2 details <span aria-hidden="true">→</span></a></article>
-    </div></section>
-  </main>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="../"><img class="brand-logo" src="../assets/images/temporalweblab-icon.png" alt="" width="52" height="52"><span><strong>TemporalWebLab</strong><small>CLEF 2027</small></span></a><p>Evaluating recency and change across the Web.</p></div><div><strong>Navigate</strong><a href="../">Overview</a><a href="./">Tasks</a><a href="../resources.html">Resources</a><a href="../submission.html">Submission</a></div><div><strong>Connect</strong><a href="https://www.clef-initiative.eu/" target="_blank" rel="noopener">CLEF Initiative</a><a href="https://github.com/clef-temporalweblab" target="_blank" rel="noopener">GitHub</a><a href="../#organizers">Organizers</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> TemporalWebLab organizers</span><a href="#top">Back to top ↑</a></div></footer>
-  <script src="../assets/main.js"></script>
-</body></html>
+<section class="page-hero">
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="../">Overview</a>
+      <span>/</span>
+      <span>Tasks</span>
+    </div>
+
+    <span class="kicker">
+      Two evaluation tasks
+    </span>
+
+    <h1>
+      TemporalWebLab tasks
+    </h1>
+
+    <p>
+      TemporalWebLab includes two complementary tasks:
+      estimating how soon an answer may need to be updated,
+      and answering questions about past information and changes
+      using Web archives. Teams may participate in either task
+      independently or in both.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="page-content">
+
+  <div class="container task-overview-grid">
+
+
+    <!-- Task 1 -->
+
+    <article class="task-overview-card">
+
+      <span class="task-number">
+        01
+      </span>
+
+      <span class="task-tag">
+        Classification · Ordinal prediction
+      </span>
+
+      <h2>
+        Question Recency Requirement Estimation
+      </h2>
+
+      <p>
+        Estimate how soon the currently correct answer to a question
+        may need to be updated using one of twelve ordered recency classes.
+      </p>
+
+      <dl class="task-specs">
+
+        <div>
+          <dt>Input</dt>
+          <dd>
+            A question, with accompanying context where provided
+          </dd>
+        </div>
+
+        <div>
+          <dt>Output</dt>
+          <dd>
+            One of 12 ordered recency classes
+          </dd>
+        </div>
+
+        <div>
+          <dt>Primary metric</dt>
+          <dd>
+            Macro-F1
+          </dd>
+        </div>
+
+      </dl>
+
+      <a
+        class="card-link"
+        href="task-1.html"
+      >
+        View Task 1 details
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </article>
+
+
+    <!-- Task 2 -->
+
+    <article class="task-overview-card">
+
+      <span class="task-number">
+        02
+      </span>
+
+      <span class="task-tag">
+        Retrieval · Evidence-grounded QA
+      </span>
+
+      <h2>
+        Question Answering over Web Archives
+      </h2>
+
+      <p>
+        Answer questions about information at specific times
+        and changes across archived versions of Web pages.
+        Systems retrieve evidence from the released archive corpus
+        and return an answer together with the corresponding
+        archive record IDs.
+      </p>
+
+      <dl class="task-specs">
+
+        <div>
+          <dt>Input</dt>
+          <dd>
+            A question and access to the released archive corpus
+          </dd>
+        </div>
+
+        <div>
+          <dt>Output</dt>
+          <dd>
+            An answer and supporting archive record IDs
+          </dd>
+        </div>
+
+        <div>
+          <dt>Evaluation</dt>
+          <dd>
+            Answer correctness and evidence grounding
+          </dd>
+        </div>
+
+      </dl>
+
+      <a
+        class="card-link"
+        href="task-2.html"
+      >
+        View Task 2 details
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </article>
+
+
+  </div>
+
+</section>
