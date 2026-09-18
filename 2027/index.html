@@ -87,7 +87,7 @@
         </div>
         <div class="intro-copy reveal">
           <p class="lead">Information changes at different speeds. Some answers may need updating within hours, while others remain valid for years. At the same time, Web pages are revised, replaced, or removed, making it difficult to establish what information was available at a particular time and how it changed. Web archives preserve captures of these pages, providing evidence for answering questions about the past and comparing information across time.</p>
-          <p>TemporalWebLab addresses these challenges through two complementary tasks. <strong>Task 1: Question Recency Requirement Estimation</strong> asks systems to estimate how soon a currently correct answer may need updating. <strong>Task 2: Question Answering over Web Archives</strong> asks systems to answer questions about information at specific times and changes across archived versions, supported by evidence from the archive collection.</p>
+          <p>TemporalWebLab addresses these challenges through two complementary tasks. <strong>Task 1: Question Recency Requirement Estimation</strong> asks systems to estimate the expected validity horizon of a currently correct answer under the given temporal context. <strong>Task 2: Question Answering over Web Archives</strong> asks systems to answer questions about information at specific times and changes across archived versions, supported by evidence from the archive collection.</p>
           <div class="audience-list" aria-label="Research areas">
             <span>Information Retrieval</span><span>Question Answering</span><span>Web Archives</span><span>Temporal Reasoning</span><span>RAG</span><span>LLMs</span>
           </div>
@@ -107,9 +107,9 @@
             <div class="task-number">TASK 01</div>
             <div class="task-tag">Classification · Ordinal prediction</div>
             <h3>Question Recency Requirement Estimation</h3>
-            <p>Given a natural-language question and, where applicable, accompanying context, estimate how soon the currently correct answer may need to be updated.</p>
+            <p>Given a natural-language question and, where provided, its temporal context, estimate how long the currently correct answer is expected to remain valid.</p>
             <dl class="task-specs">
-              <div><dt>Output</dt><dd>1 of 12 ordered recency classes</dd></div>
+              <div><dt>Output</dt><dd>1 of 12 ordered validity-horizon classes</dd></div>
               <div><dt>Primary metric</dt><dd>Macro-averaged F1</dd></div>
               <div><dt>Data</dt><dd>Adapted from RecencyQA</dd></div>
             </dl>
