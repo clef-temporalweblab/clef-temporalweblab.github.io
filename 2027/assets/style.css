@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
 :root {
   --ink: #0c2033;
   --muted: #5d6c78;
@@ -11,8 +13,8 @@
   --line: #dbe5e6;
   --shadow: 0 22px 60px rgba(7, 29, 51, .12);
   --radius: 22px;
-  --serif: "Newsreader", Georgia, serif;
-  --sans: "DM Sans", system-ui, sans-serif;
+  --serif: "Space Grotesk", system-ui, sans-serif;
+  --sans: "Inter", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
