@@ -155,55 +155,15 @@
 
         <section class="content-section" aria-labelledby="task-definition">
           <h2 id="task-definition">Task definition</h2>
-          <p>Given a natural-language question and, where provided, its
-          <strong>context</strong>, the goal is to predict the question's
-          <strong>recency requirement</strong>.</p>
-          <p>The recency requirement indicates <strong>how recent the information
-          needs to be to answer the question correctly</strong>. Systems predict
-          exactly one label from the twelve ordered recency classes.</p>
-          <p><strong>Context</strong> is additional text that describes the
-          situation in which the question is asked. It may contain temporal cues,
-          events, or circumstances that affect the recency requirement. The same
-          question can therefore have different recency requirements under
-          different contexts.</p>
+          <p>Given a natural-language question and, where provided, its <strong>context</strong>, the goal is to predict one of twelve ordered <strong>recency classes</strong>.</p>
+          <p>The predicted class represents <strong>how recent the information needs to be to answer the question correctly</strong> under the given context.</p>
+          <p><strong>Context</strong> provides information about the temporal or situational setting in which the question is asked. It may describe an event, stage, or circumstance that affects how recent the information should be.</p>
           <p>For example:</p>
-          <p><strong>Question:</strong> Who is the richest man on Earth?</p>
-          <p><strong>Context:</strong> “A student is preparing a report on the world’s wealthiest individuals using rankings published earlier this year.”</p>
+          <p><strong>Question:</strong> What is the latest stable version of Python?</p>
+          <p><strong>Context:</strong> “A developer is preparing the software environment for a new project that will begin development soon.”</p>
           <p><strong>Recency class:</strong> A-Few-Months</p>
-          <p>For this question, information from the last few months is
-          appropriate, while much older rankings may no longer reflect the current
-          answer.</p>
-          <p>The task focuses on how recent the information needs to be for
-          answering the question, not on how frequently a source reporting that
-          information is published or updated.</p>
-          <p>Systems are not required to generate the factual answer itself.</p>
-          
-        </section>
-
-        <section class="content-section" aria-labelledby="task-definition-1">
-<p>Given a natural-language question and, where provided, its
-          <strong>context</strong>, the goal is to predict one of twelve ordered
-          <strong>recency classes</strong>.</p>
-          <p>The predicted class represents <strong>how recent the information
-          needs to be to answer the question correctly</strong> under the given
-          context.</p>
-          <p><strong>Context</strong> provides information about the temporal or
-          situational setting in which the question is asked. It may describe an
-          event, stage, or circumstance that affects how recent the information
-          should be.</p>
-          <p>For example:</p>
-          <p><strong>Question:</strong> What is the latest stable version of
-          Python? <strong>Context:</strong> “A developer is preparing the software
-          environment for a new project that will begin development soon.”
-          <strong>Recency class:</strong> A-Few-Months</p>
-          <p>Python releases change over time, but a stable version usually
-          remains the latest stable release for a period of time before it is
-          replaced by a newer version. Information from the last few months may
-          therefore still be valid, while much older information is more likely to
-          be outdated.</p>
-          <p>The task concerns the <strong>freshness of the information needed to
-          answer the question</strong>, not how often a source reporting that
-          information is published or updated.</p>
+          <p>Python releases change over time, but a stable version usually remains the latest stable release for a period of time before it is replaced by a newer version. Information from the last few months may therefore still be valid, while much older information is more likely to be outdated.</p>
+          <p>The task concerns the <strong>freshness of the information needed to answer the question</strong>, not how often a source reporting that information is published or updated.</p>
           <p>Systems are not required to generate the factual answer itself.</p>
           <h3 id="illustrative-examples">Illustrative examples</h3>
           <table class="data-table">
@@ -218,33 +178,25 @@
           <tbody>
           <tr class="odd">
           <td>What is the exchange rate between the euro and the US dollar?</td>
-          <td>“A traveler is checking how much money they would receive before
-          making a currency exchange.”</td>
+          <td>“A traveler is checking how much money they would receive before making a currency exchange.”</td>
           <td>A-Few-Hours</td>
-          <td>Exchange rates can change throughout the day, so highly recent
-          information is needed.</td>
+          <td>Exchange rates can change throughout the day, so highly recent information is needed.</td>
           </tr>
           <tr class="even">
           <td>What is the unemployment rate in Austria?</td>
-          <td>“An economist is preparing a report on the present labour-market
-          situation.”</td>
+          <td>“An economist is preparing a report on the present labour-market situation.”</td>
           <td>A-Month</td>
-          <td>The unemployment rate can change from one reporting period to the
-          next, so information from the recent period is needed.</td>
+          <td>The unemployment rate can change from one reporting period to the next, so information from the recent period is needed.</td>
           </tr>
           <tr class="odd">
           <td>What is Geoff Hinton’s h-index?</td>
-          <td>“A conference organizer is preparing a speaker profile for an
-          upcoming event.”</td>
+          <td>“A conference organizer is preparing a speaker profile for an upcoming event.”</td>
           <td>A-Few-Months</td>
-          <td>The value can change as new publications and citations are added, so
-          relatively recent information is more suitable than much older
-          information.</td>
+          <td>The value can change as new publications and citations are added, so relatively recent information is more suitable than much older information.</td>
           </tr>
           <tr class="even">
           <td>What is the chemical symbol for gold?</td>
-          <td>“During a chemistry class, a student asks about the chemical symbol
-          for gold.”</td>
+          <td>“During a chemistry class, a student asks about the chemical symbol for gold.”</td>
           <td>Never</td>
           <td>The answer is stable and does not depend on recent information.</td>
           </tr>
