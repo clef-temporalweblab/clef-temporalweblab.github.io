@@ -239,6 +239,37 @@
             </p>
           </section>
 
+          <section class="content-section" id="task-definition">
+            <h2>Task definition</h2>
+
+            <p>
+              Given a temporal question and access to the provided Web archive corpus, the goal is to <strong>retrieve the archive records needed to answer the question, generate the answer, and identify the records that support it</strong>.
+            </p>
+
+            <p>
+              The answer must address the temporal aspect of the question and be grounded in evidence from one or more archived Web pages in the provided corpus.
+            </p>
+
+            <p>
+              Systems must therefore perform three related steps:
+            </p>
+
+            <ul>
+              <li><strong>Temporal retrieval:</strong> identify archive records that are both topically relevant and appropriate for the time period specified by the question.</li>
+              <li><strong>Temporal question answering:</strong> use the retrieved evidence to answer the question about a particular point in time or about how information changed over time.</li>
+              <li><strong>Evidence grounding:</strong> provide the archive record IDs that support the answer.</li>
+            </ul>
+
+            <p>
+              The task focuses on question answering over historical Web information. Systems should answer using the provided archive corpus rather than relying only on the current Web.
+            </p>
+
+            <p>
+              Systems are not required to reproduce archived pages themselves; they must return the answer together with the supporting archive record IDs.
+            </p>
+          </section>
+
+
 
 
           <!-- ===============================================
@@ -692,6 +723,10 @@
 
           <a href="#why-temporal-web-qa">
             Why temporal Web QA matters
+          </a>
+
+          <a href="#task-definition">
+            Task definition
           </a>
 
           <a href="#input-output">
