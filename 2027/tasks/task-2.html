@@ -219,6 +219,27 @@
             </p>
           </section>
 
+          <section class="content-section" id="why-temporal-web-qa">
+            <h2>Why does temporal Web QA matter?</h2>
+
+            <p>
+              Large language models (LLMs) and retrieval-augmented question-answering systems increasingly rely on Web information to answer questions. However, information on the Web is not static: pages are updated, facts change, and earlier versions of information may disappear from the current Web.
+            </p>
+
+            <p>
+              This creates an important challenge for questions about the past. A system may retrieve information that is highly relevant to the question but comes from the wrong point in time, for example from a page that was published or updated after the period being asked about. For temporal and historical questions, topical relevance alone is therefore not sufficient—the system must retrieve <strong>temporally appropriate versions of the relevant Web pages</strong>.
+            </p>
+
+            <p>
+              Web archives preserve captures of Web pages across time, making it possible to recover earlier states of online information. By combining archive retrieval with temporal reasoning, systems can answer questions about information represented at particular points in time, compare information across archived versions, verify whether a documented change occurred, and trace how information evolved across multiple observations.
+            </p>
+
+            <p>
+              Studying this capability is important for building QA and RAG systems that can reason over <strong>time-specific evidence</strong>, rather than treating the current Web as a complete representation of information from the past.
+            </p>
+          </section>
+
+
 
           <!-- ===============================================
                INPUT / OUTPUT
@@ -667,6 +688,10 @@
 
           <a href="#overview">
             Objective and motivation
+          </a>
+
+          <a href="#why-temporal-web-qa">
+            Why temporal Web QA matters
           </a>
 
           <a href="#input-output">
