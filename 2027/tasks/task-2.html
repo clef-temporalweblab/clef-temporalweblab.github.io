@@ -300,77 +300,107 @@
               The answer should be based on evidence from the retrieved archived pages, and the cited records should correspond to the relevant time period or periods in the question.
             </p>
 
+          </section>
+
+          <section class="content-section" id="illustrative-example">
+            <h2>Illustrative example</h2>
+
+            <p>
+              The following example investigates how the maximum award of the <strong>Future Web Research Grant</strong> changed over time. It illustrates the <strong>Compare versions</strong> question type, where the system must retrieve the most relevant archived versions of a Web page from two different points in time and use them to determine how the information changed.
+            </p>
+
+            <h3>Archived records</h3>
+
             <table class="data-table">
-
+              <thead>
+                <tr>
+                  <th>Archive record ID</th>
+                  <th>Archived information</th>
+                </tr>
+              </thead>
               <tbody>
-
                 <tr>
-
-                  <th>
-                    Archived evidence
-                  </th>
-
-                  <td>
-                    Record <code>example-2016</code>:
-                    a 2016 capture of the Example Research Grant page
-                    states a maximum award of $10,000.
-
-                    <br>
-
-                    Record <code>example-2020</code>:
-                    a 2020 capture of the same page states a maximum
-                    award of $15,000.
-                  </td>
-
+                  <td><code>futureweb-2015</code></td>
+                  <td>A 2015 capture of the Future Web Research Grant page lists application deadlines and eligibility requirements.</td>
                 </tr>
-
-
                 <tr>
-
-                  <th>
-                    Question
-                  </th>
-
-                  <td>
-                    How did the maximum award listed for the Example
-                    Research Grant change between the 2016 and 2020
-                    captures?
-                  </td>
-
+                  <td><code>futureweb-2016</code></td>
+                  <td>A 2016 capture of the Future Web Research Grant page states a maximum award of $75,000.</td>
                 </tr>
-
-
                 <tr>
+                  <td><code>futureweb-2020</code></td>
+                  <td>A 2020 capture of the Future Web Research Grant page states a maximum award of <section class="content-section" id="input-output">
 
-                  <th>
-                    Answer
-                  </th>
+            <h2>Input and output</h2>
 
-                  <td>
-                    It increased from $10,000 to $15,000.
-                  </td>
+            <h3>Input</h3>
 
+            <p>
+              A temporal question and access to the provided Web archive corpus.
+            </p>
+
+            <p>
+              The corpus contains multiple archived versions of Web pages from different points in time. Systems must identify the archive records that are relevant to both the topic of the question and its temporal requirements.
+            </p>
+
+            <h3>Output</h3>
+
+            <p>
+              An answer to the question together with the archive record IDs that support the answer.
+            </p>
+
+            <p>
+              The answer should be based on evidence from the retrieved archived pages, and the cited records should correspond to the relevant time period or periods in the question.
+            </p>00,000.</td>
                 </tr>
-
-
-                <tr>
-
-                  <th>
-                    Supporting record IDs
-                  </th>
-
-                  <td>
-                    <code>example-2016</code>,
-                    <code>example-2020</code>
-                  </td>
-
-                </tr>
-
               </tbody>
-
             </table>
 
+            <div class="detail-grid">
+              <div class="detail-card">
+                <h3>Question</h3>
+                <p>How did the maximum award listed for the Future Web Research Grant change between the 2016 and 2020 captures?</p>
+              </div>
+
+              <div class="detail-card">
+                <h3>Answer</h3>
+                <p>It increased from $75,000 to <section class="content-section" id="input-output">
+
+            <h2>Input and output</h2>
+
+            <h3>Input</h3>
+
+            <p>
+              A temporal question and access to the provided Web archive corpus.
+            </p>
+
+            <p>
+              The corpus contains multiple archived versions of Web pages from different points in time. Systems must identify the archive records that are relevant to both the topic of the question and its temporal requirements.
+            </p>
+
+            <h3>Output</h3>
+
+            <p>
+              An answer to the question together with the archive record IDs that support the answer.
+            </p>
+
+            <p>
+              The answer should be based on evidence from the retrieved archived pages, and the cited records should correspond to the relevant time period or periods in the question.
+            </p>00,000.</p>
+              </div>
+            </div>
+
+            <div class="notice">
+              <strong>Supporting record IDs:</strong>
+              <code>futureweb-2016</code>, <code>futureweb-2020</code>
+            </div>
+
+            <p>
+              The system must identify the 2016 and 2020 records as the relevant evidence for the question. The 2015 record is related to the same grant page but does not contain the information needed to answer the question.
+            </p>
           </section>
+
+
 
 
           <!-- ===============================================
@@ -380,48 +410,41 @@
           <section class="content-section" id="question-types">
 
             <h2>Question types</h2>
-          
+
             <div class="detail-grid">
-          
+
               <div class="detail-card">
                 <h3>Point in time</h3>
-                <p>
-                  Answer a question using information available at a specified time
-                  or during a specified period.
-                </p>
+                <p>Answer a question about information represented in the archive at a specific point in time or during a specified period.</p>
+                <p><strong>Example:</strong> What was the maximum award listed for the Future Web Research Grant in 2018?</p>
               </div>
-          
+
               <div class="detail-card">
                 <h3>First or last observed</h3>
-                <p>
-                  Identify the earliest or latest archived observation of a fact
-                  within the provided corpus.
-                </p>
+                <p>Identify the earliest or latest point in time at which a particular fact or piece of information is observed in the archive.</p>
+                <p><strong>Example:</strong> When was the $100,000 maximum award first observed in the archive?</p>
               </div>
-          
+
               <div class="detail-card">
                 <h3>Compare versions</h3>
-                <p>
-                  Compare information across two archived versions of a page.
-                </p>
+                <p>Compare how a particular piece of information differs between two specified points in time.</p>
+                <p><strong>Example:</strong> How did the maximum award listed for the Future Web Research Grant change between 2016 and 2020?</p>
               </div>
-          
+
               <div class="detail-card">
                 <h3>Verify change</h3>
-                <p>
-                  Determine whether a stated change is supported by archived evidence.
-                </p>
+                <p>Determine whether a stated claim about a change is supported by evidence from the archive.</p>
+                <p><strong>Example:</strong> Is the claim that the maximum award increased from $75,000 in 2016 to $100,000 in 2020 supported by the archive?</p>
               </div>
-          
+
               <div class="detail-card">
                 <h3>Trace changes</h3>
-                <p>
-                  Reconstruct how information changed across multiple archived versions.
-                </p>
+                <p>Reconstruct how a particular piece of information changed across multiple points in time.</p>
+                <p><strong>Example:</strong> How did the maximum award listed for the Future Web Research Grant change between 2016, 2018, and 2020?</p>
               </div>
-          
+
             </div>
-          
+
           </section>
 
 
@@ -728,6 +751,10 @@
 
           <a href="#input-output">
             Input, output and example
+          </a>
+
+          <a href="#illustrative-example">
+            Illustrative example
           </a>
 
           <a href="#question-types">
