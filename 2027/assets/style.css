@@ -544,3 +544,47 @@ body { background: #ffffff; color: #17324a; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-grid > div:first-child { grid-column: auto; }
 }
+
+
+/* Clear task-page identity and accessible contact details */
+.page-hero > .container > .kicker {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 9px 14px;
+  border: 1px solid #8bd4ce;
+  border-radius: 999px;
+  color: #075f5a;
+  background: #e6f7f5;
+  font-size: .84rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.footer-contact {
+  padding: 18px 20px;
+  border: 1px solid #b9d6d7;
+  border-radius: 14px;
+  background: #ffffff;
+}
+.footer-contact strong {
+  margin-bottom: 3px;
+  color: #17324a;
+  font-size: .9rem;
+}
+.footer-contact span {
+  margin-top: 7px;
+  color: #405f70;
+  font-size: .78rem;
+  font-weight: 700;
+}
+.footer-contact a {
+  color: #006f69;
+  font-size: .84rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #8bcac6;
+  text-underline-offset: 3px;
+}
+.footer-contact a:hover { color: #004f4b; }
