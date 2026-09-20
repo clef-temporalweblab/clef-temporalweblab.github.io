@@ -517,3 +517,30 @@ body { background: #ffffff; color: #17324a; }
 .tasks-section .task-tag { margin: 12px 0 16px; }
 .tasks-section .task-card > .card-link { margin-top: auto; padding-top: 26px; }
 .tasks-section .task-two > .card-link { color: #233f64; }
+
+
+/* TemporalWebLab wordmark and contact details */
+.hero .hero-title .title-temporal,
+.hero .hero-title .title-weblab {
+  display: inline;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+.hero .hero-title .title-temporal { color: #123a5a; }
+.hero .hero-title .title-weblab { color: #279b91; }
+.footer-grid { grid-template-columns: 1.7fr .8fr .8fr 1.7fr; gap: 48px; }
+.footer-contact span { margin-top: 4px; color: #b3c5cf; font-size: .76rem; font-weight: 600; }
+.footer-contact a { overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid > div:first-child { grid-column: auto; }
+}
