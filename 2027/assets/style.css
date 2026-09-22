@@ -645,3 +645,5 @@ body { background: #ffffff; color: #17324a; }
   .mailing-list-card { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
   .mailing-list-button { width: 100%; min-width: 0; }
 }
+
+.participation-group-link { margin-top: 20px; }
