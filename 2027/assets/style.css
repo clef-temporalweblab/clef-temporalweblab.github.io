@@ -588,3 +588,60 @@ body { background: #ffffff; color: #17324a; }
   text-underline-offset: 3px;
 }
 .footer-contact a:hover { color: #004f4b; }
+
+
+/* Google Group call to action */
+.mailing-list-section {
+  padding: 30px 0;
+  border-bottom: 1px solid #d7e4e7;
+  background: #f7fafb;
+}
+.mailing-list-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 36px;
+  align-items: center;
+  padding: 30px 34px;
+  border: 1px solid #cfe1e4;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(12, 32, 51, .07);
+}
+.mailing-list-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #087d75;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mailing-list-card h2,
+.mailing-list-card h3 {
+  margin: 0;
+  color: #17324a;
+  font-family: var(--sans);
+  font-weight: 650;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+.mailing-list-card h2 { font-size: clamp(1.5rem, 3vw, 2.05rem); }
+.mailing-list-card h3 { font-size: 1.35rem; }
+.mailing-list-card p {
+  margin: 8px 0 0;
+  color: #526b7b;
+}
+.mailing-list-button {
+  min-width: 220px;
+  justify-content: center;
+  white-space: nowrap;
+}
+.mailing-list-card-compact {
+  margin-top: 28px;
+  padding: 24px;
+  box-shadow: none;
+}
+@media (max-width: 720px) {
+  .mailing-list-card { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+  .mailing-list-button { width: 100%; min-width: 0; }
+}
